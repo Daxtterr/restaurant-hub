@@ -1,7 +1,7 @@
+import { Request } from "express";
 import { Types } from "mongoose";
 
 export interface IUser {
-  //: Types.ObjectId;
   firstName?: string;
   lastName?: string;
   emailAddress?: string;
@@ -30,4 +30,9 @@ export interface ICart {
   price?: number;
   restaurant?: Types.ObjectId;
   owner?: Types.ObjectId;
+  quantity?: number;
+}
+
+export interface IRequest extends Request {
+  user?: any;
 }

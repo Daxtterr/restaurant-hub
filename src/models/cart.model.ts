@@ -7,7 +7,7 @@ const cartSchema = new mongoose.Schema<ICart>(
       type: String,
     },
     price: {
-      type: String,
+      type: Number,
     },
     restaurant: {
       type: mongoose.Types.ObjectId,
@@ -16,6 +16,10 @@ const cartSchema = new mongoose.Schema<ICart>(
     owner: {
       type: mongoose.Types.ObjectId,
       ref: "User",
+    },
+    quantity: {
+      type: Number,
+      default: 1,
     },
   },
   {
